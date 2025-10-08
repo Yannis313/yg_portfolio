@@ -1,0 +1,26 @@
+@font-face {
+  font-family: 'Artegra';
+  src: url('./fonts/ArtegraSans-Black.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'ArtegraLightItalic';
+  src: url('./fonts/ArtegraSans-LightItalic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'ArtegraLight';
+  src: url('./fonts/ArtegraSans-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'LumiosTypewriter';
+  src: url('./fonts/LumiosTypewriter-Old.ttf') format('truetype');
+}
+
+body {
+    background-image: url("./images/crumpled_paper_background.jpg");
+    background-color: #cccccc;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
