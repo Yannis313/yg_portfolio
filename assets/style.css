@@ -18,9 +18,18 @@
   src: url('./fonts/LumiosTypewriter-Old.ttf') format('truetype');
 }
 
+* {
+ margin: 0;
+ box-sizing: border-box;
+}
+
 body {
-    background-image: url("./images/crumpled_paper_background.jpg");
-    background-color: #cccccc;
-    background-repeat: no-repeat;
-    background-size: cover;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-image: url("./images/crumpled_paper_background.jpg");
+  background-color: #cccccc;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
