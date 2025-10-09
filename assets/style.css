@@ -1,26 +1,22 @@
 @font-face {
-  font-family: 'Artegra';
-  src: url('./fonts/ArtegraSans-Black.ttf') format('truetype');
+  font-family: "Artegra";
+  src: url("./fonts/ArtegraSans-Black.ttf") format("truetype");
 }
-
 @font-face {
-  font-family: 'ArtegraLightItalic';
-  src: url('./fonts/ArtegraSans-LightItalic.ttf') format('truetype');
+  font-family: "ArtegraLightItalic";
+  src: url("./fonts/ArtegraSans-LightItalic.ttf") format("truetype");
 }
-
 @font-face {
-  font-family: 'ArtegraLight';
-  src: url('./fonts/ArtegraSans-Light.ttf') format('truetype');
+  font-family: "ArtegraLight";
+  src: url("./fonts/ArtegraSans-Light.ttf") format("truetype");
 }
-
 @font-face {
-  font-family: 'LumiosTypewriter';
-  src: url('./fonts/LumiosTypewriter-Old.ttf') format('truetype');
+  font-family: "LumiosTypewriter";
+  src: url("./fonts/LumiosTypewriter-Old.ttf") format("truetype");
 }
-
 * {
- margin: 0;
- box-sizing: border-box;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -33,3 +29,5 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,17 @@
+@import './components/fonts';
+
+* {
+ margin: 0;
+ box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-image: url("./images/crumpled_paper_background.jpg");
+  background-color: #cccccc;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
