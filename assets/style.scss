@@ -1,4 +1,5 @@
-@import './components/fonts';
+@use './components/fonts';
+@use './components/home_title';
 
 * {
  margin: 0;
@@ -11,7 +12,7 @@ body {
   display: flex;
   flex-direction: column;
   background-image: url("./images/crumpled_paper_background.jpg");
-  background-color: #cccccc;
+  background-color: #a09f9f;
   background-repeat: no-repeat;
   background-size: cover;
 }
