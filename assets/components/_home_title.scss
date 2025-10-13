@@ -1,12 +1,13 @@
 .home_body {
   margin: 0;
   display: flex;
-  justify-content: center;
+  // justify-content: center;
   align-items: center;
   min-height: 100vh;
 
   .hero_title_div {
     width: 100%;
+    margin-top: 16rem;
     position: relative;
     text-align: center;
 
@@ -46,7 +47,7 @@
 
     h1 {
       position: relative;
-      color: #000000;
+      color: #141414;
       opacity: 0.9;
       z-index: 1;
     }
