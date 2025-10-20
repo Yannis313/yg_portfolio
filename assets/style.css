@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "Artegra";
   src: url("./fonts/ArtegraSans-Black.ttf") format("truetype");
@@ -62,7 +63,7 @@
   z-index: 1;
 }
 
-.navbar {
+.navbar-desktop {
   height: 3.5rem;
   width: 65%;
   display: flex;
@@ -78,7 +79,7 @@
   opacity: 0.5;
 }
 
-.liens-navbar {
+.liens-navbar-desktop {
   display: flex;
   justify-content: space-between;
   column-gap: 2rem;
@@ -86,23 +87,23 @@
   margin-right: 5rem;
 }
 
-.liens-navbar a {
+.liens-navbar-desktop a {
   text-decoration: none;
   color: white;
 }
 
-.logo {
+.logo-desktop {
   width: 2.5rem;
   height: 2.5rem;
   margin-left: 0.5rem;
 }
 
-.dropdown {
+.dropdown-desktop {
   position: relative;
   display: inline-block;
 }
 
-.liens-dropdown {
+.liens-dropdown-desktop {
   display: none;
   position: absolute;
   margin-top: 1rem;
@@ -113,7 +114,7 @@
   z-index: 1;
 }
 
-.liens-dropdown a {
+.liens-dropdown-desktop a {
   float: none;
   color: white;
   padding: 0.3rem 0.3rem;
@@ -123,17 +124,17 @@
   border-top: solid 0.3px;
 }
 
-.liens-dropdown a:hover {
+.liens-dropdown-desktop a:hover {
   background-color: #ddd;
 }
 
-.dropdown-button {
+.dropdown-button-desktop {
   border: none;
   background-color: inherit;
   color: white;
 }
 
-.dropdown.active .liens-dropdown {
+.dropdown-desktop.active .liens-dropdown-desktop {
   display: block;
 }
 
@@ -142,10 +143,58 @@
   height: 50px;
 }
 
-.dropdown:hover .liens-dropdown {
+.dropdown-desktop:hover .liens-dropdown-desktop {
   display: block;
 }
 
+.navbar-mobile {
+  display: none;
+  position: relative;
+  background-color: #919191;
+  padding: 1rem;
+  border-radius: 1.5rem;
+  width: 90%;
+  margin: 2rem auto;
+}
+
+/* Toggle bouton */
+.toggle-navbar {
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* Menu mobile caché */
+.liens-navbar-mobile {
+  display: none;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.liens-navbar-mobile a {
+  padding: 0.5rem 0;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+}
+
+/* dropdown mobile */
+.dropdown:hover .liens-dropdown {
+  position: static;
+  box-shadow: none;
+  margin-top: 0;
+}
+
+@media (max-width: 768px) {
+  /* cacher navbar desktop */
+  .navbar-desktop {
+    display: none;
+  }
+  /* afficher navbar mobile */
+  .navbar-mobile {
+    display: block;
+  }
+}
 * {
   margin: 0;
   box-sizing: border-box;
