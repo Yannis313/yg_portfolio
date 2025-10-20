@@ -65,7 +65,7 @@
   background-color: #ddd;
 }
 
-.dropdown-button-desktop {
+.dropdown-button {
     border: none;
     background-color: inherit;
     color: white;
@@ -90,15 +90,21 @@
     background-color: #919191;
     padding: 1rem;
     border-radius: 1.5rem;
-    width: 90%;
-    margin: 2rem auto;
+    width: 12%;
+    max-height: 5rem;
+    margin-left: auto;
+    margin-top: 2rem;
+    margin-right: 2rem;
 }
+
 
 /* Toggle bouton */
 .toggle-navbar {
     font-size: 2rem;
     color: white;
     cursor: pointer;
+    text-align: center;
+    opacity: 0.8;
 }
 
 /* Menu mobile caché */
@@ -106,6 +112,11 @@
     display: none;
     flex-direction: column;
     margin-top: 1rem;
+    border: solid 0.3px;
+    border-color: white;
+    border-radius: 1rem;
+    width: 5rem;
+    text-align: center;
 }
 
 .liens-navbar-mobile a {
@@ -131,5 +142,17 @@
     /* afficher navbar mobile */
     .navbar-mobile {
         display: block;
+    }
+    
+    .liens-navbar-mobile {
+        display: none;
+    }
+
+    .liens-navbar-mobile.active {
+        display: flex;
+    }
+
+    .logo-mobile {
+        display: none;
     }
 }

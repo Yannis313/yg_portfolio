@@ -2,7 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   const dropdown = document.querySelector('.dropdown');
-  const toggleBtn = dropdown.querySelector('.dropdown-button');
+  const dropdownBtn = document.querySelector('.dropdown-button-desktop');
 
   const openMenu = () => dropdown.classList.add('active');
   const closeMenu = () => dropdown.classList.remove('active');
@@ -11,9 +11,16 @@ document.addEventListener('DOMContentLoaded', () => {
     dropdown.classList.toggle('active');
   };
 
-  toggleBtn.addEventListener('click', toggleMenu);
+  dropdownBtn.addEventListener('click', toggleMenu);
 
   document.addEventListener('click', (e) => {
     if (!dropdown.contains(e.target)) closeMenu();
   });
+
+  const toggleButton = document.getElementById("toggle-navbar");
+  const navMobile = document.getElementById("liens-navbar-mobile");
+
+  toggleButton.addEventListener("click", () => {
+    navMobile.classList.toggle("active");
+});
 });
