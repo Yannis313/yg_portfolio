@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
               <div class="loader"></div>
             </div>
             <div class="press-skills" id="press-skills">
-              <p>-> enter :</p>
+              <p>-> Usage : enter</p>
               <p>   --- SKILLS to display skills</p>
               <p>   --- PROJECTS to display projects</p>
               <p class="beginator" id="beginator">-></p>
