@@ -1,0 +1,86 @@
+.home_body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.hero_title_div {
+  width: 100%;
+  margin-top: 15rem;
+  position: relative;
+  text-align: center;
+}
+
+h1, p {
+  width: 100%;  
+  margin: 0;
+  font-family: "Artegra";
+  font-size: clamp(2rem, 6vw, 14rem);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.title1 {
+    bottom: 1vw;
+    color: rgb(111, 113, 117);
+    z-index: 0;
+}
+
+.title2 {
+    top: 1vw;
+    color: rgb(111, 113, 117);
+    z-index: 0;
+}
+
+.title3 {
+    bottom: 2vw;
+    color: rgb(171, 176, 180);
+    z-index: -1;
+}
+
+.title4 {
+    top: 2vw;
+    color: rgb(171, 176, 180);
+    z-index: -1;
+}
+
+h1 {
+  position: relative;
+  color: #141414;
+  opacity: 0.9;
+  z-index: 1;
+}
+
+
+@media (max-width: 768px) {
+.hero_title_div {
+  margin-top: 14rem;
+}
+}
+
+
+/* --- FONT FACES --- */
+@font-face {
+  font-family: 'Artegra';
+  src: url('/fonts/ArtegraSans-Black.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'ArtegraLightItalic';
+  src: url('/fonts/ArtegraSans-LightItalic.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'ArtegraLight';
+  src: url('/fonts/ArtegraSans-Light.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'LumiosTypewriter';
+  src: url('/fonts/LumiosTypewriter-Old.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Cascadia';
+  src: url('/fonts/Cascadia.ttf') format('truetype');
+}
+

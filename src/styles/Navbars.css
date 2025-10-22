@@ -1,5 +1,5 @@
 .navbar-desktop {
-    height: 3.5rem;
+    height: 2rem;
     width: 65%;
     display: flex;
     justify-content: space-between;
@@ -28,9 +28,8 @@
 }
 
 .logo-desktop {
-    width: 2.5rem;
-    height: 2.5rem;
-    margin-left: 0.5rem;
+    width: 3rem;
+    height: 3rem;
 }
 
 
@@ -40,7 +39,7 @@
 }
 
 .liens-dropdown-desktop {
-    display: none;
+    display: block;
     position: absolute;
     margin-top: 1rem;
     border: solid 0.3px;
@@ -80,14 +79,14 @@
 }
 
 .navbar-mobile {
-    display: none;
+    display: block;
     position: relative;
     background-color: #919191;
     border: solid 0.3px;
     border-color: white;
     padding: 0.4rem;
     border-radius: 1.5rem;
-    min-width: 50px;
+    min-width: 35px;
     max-height: 4rem;
     margin-left: auto;
     margin-top: 2rem;
@@ -105,7 +104,7 @@
 }
 
 .liens-navbar-mobile {
-    display: none;
+    display: block;
     flex-direction: column;
     margin-top: 1rem;
     position: absolute;
@@ -140,7 +139,7 @@
 }
 
 .liens-dropdown-mobile {
-  display: none;
+  display: block;
   flex-direction: column;
   border: solid 0.3px;
   border-color: white;
@@ -149,26 +148,4 @@
 
 .dropdown-mobile.active .liens-dropdown-mobile {
   display: flex;
-}
-
-@media (max-width: 890px) {
-    .navbar-desktop {
-        display: none;
-    }
-
-    .navbar-mobile {
-        display: block;
-    }
-    
-    .liens-navbar-mobile {
-        display: none;
-    }
-
-    .liens-navbar-mobile.active {
-        display: flex;
-    }
-
-    .logo-mobile {
-        display: none;
-    }
 }

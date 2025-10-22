@@ -1,20 +1,20 @@
-@use './components/fonts';
-@use './components/home_title';
-@use './components/navbar';
-@use './components/terminaltechnos';
-
-* {
- margin: 0;
- box-sizing: border-box;
-}
-
 body {
-  min-height: 100vh;
-  width: 100%;
   display: flex;
   flex-direction: column;
   background-image: url("./images/crumpled_paper_background.jpg");
   background-color: #a09f9f;
   background-repeat: no-repeat;
   background-size: cover;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
 }

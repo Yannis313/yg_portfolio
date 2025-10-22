@@ -1,0 +1,109 @@
+.terminal-skills-project-container {
+    position: fixed;
+    display: block;
+    top: 20%;
+    left: 20%;
+    width: 60%;
+    height: 60%;
+    background-color: black;
+    opacity: 0.9;
+    z-index: 2;
+    border-top: solid 1.8rem;
+    border-bottom: solid 1px;
+    border-left: solid 1px;
+    border-right: solid 1px;
+    border-color: rgb(89, 89, 89);
+    font-family: 'Cascadia', monospace;
+}
+
+.terminal-skills-project-container.active {
+  display: block;
+}
+
+.terminal-content {
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  margin-left: 0.4rem;
+}
+
+/* 👇 Tous les éléments montés dans le DOM, visibilité via opacity */
+.initializer,
+.loading-projects,
+.beginator {
+    color: #dedede;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.initializer p,
+.press-skill p,
+.loading-projects p, .initializer .loader,
+.loading-projects .loader {
+    flex: 0 0 auto;
+    margin: 0;
+}
+
+.press-skills {
+    color: #dedede;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.8rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.initializer.active,
+.loading-projects.active,
+.press-skills.active,
+.beginator.active {
+    opacity: 1;
+}
+
+.home_body .terminal-skills-project-container p {
+    position: relative;
+    font-family: 'Cascadia', monospace;
+    font-size: 0.7rem;
+    margin: 0;
+}
+
+.home_body .terminal-skills-project-container span {
+    position: relative;
+    font-family: 'Cascadia', monospace;
+    font-size: 0.7rem;
+    /* margin: 0; */
+}
+
+.loader {
+  border: 1px solid #c0c0c0;
+  border-radius: 50%;
+  border-top: 1px solid #cde401;
+  width: 0.4rem;
+  height: 0.4rem;
+  margin-top: 0.35rem; 
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Assure la font-family spécifique au terminal */
+.home_body .terminal-skills-project-container p,
+.home_body .terminal-skills-project-container h2 {
+    font-family: 'Cascadia', monospace;
+    margin: 0;
+}
