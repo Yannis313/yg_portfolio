@@ -5,6 +5,8 @@ const Terminal = ({ active, content, onClose }) => {
   const [showInitializer, setShowInitializer] = useState(false);
   const [showLoading, setShowLoading] = useState(false);
   const [showPressSkills, setShowPressSkills] = useState(false);
+  const [userInput, setUserInput] = useState("");
+  const [commandOutput, setCommandOutput] = useState(null);
   const [showBeginator, setShowBeginator] = useState(false);
   const terminalRef = useRef(null);
 
@@ -46,6 +48,20 @@ const Terminal = ({ active, content, onClose }) => {
     };
   }, [active, content]);
 
+  const handleCommand = (e) => {
+    if (e.key === "Enter") {
+      const command = userInput.trim().toLowerCase(); // 🔸 insensible à la casse
+      if (command === "skills") {
+        setCommandOutput("skills");
+      } else if (command === "projects") {
+        setCommandOutput("projects");
+      } else {
+        setCommandOutput("unknown");
+      }
+      setUserInput("");
+    }
+  };
+
   if (!active) return null;
 
   return (
@@ -67,11 +83,68 @@ const Terminal = ({ active, content, onClose }) => {
           </div>
 
           <div className={`press-skills ${showPressSkills ? "active" : ""}`}>
-            <p>usage : type</p>
-            <p>   --- SKILLS to display skills</p>
-            <p>   --- PROJECTS to display projects</p>
-            <p className={`beginator ${showBeginator ? "active" : ""}`}>~</p>
+            <p>usage</p>
+            <p>   --- type SKILLS to display skills</p>
+            <p>   --- type PROJECTS to display projects</p>
           </div>
+
+          {/* 🔹 Zone de saisie utilisateur */}
+          {showBeginator && (
+            <>
+              <div className="terminal-input-line">
+                <span className="prompt">~</span>
+                <input
+                  type="text"
+                  value={userInput}
+                  onChange={(e) => setUserInput(e.target.value)}
+                  onKeyDown={handleCommand}
+                  placeholder="type a command..."
+                  autoFocus
+                />
+              </div>
+
+              {/* 🔹 Résultat de la commande */}
+              {commandOutput === "skills" && (
+                <div className="terminal-output">
+                  <pre className="terminal-table">
+                  {`
+                  ┌───────────────────────────────┬───────────────────────────────┐
+                  │           FRONTEND            │           BACKEND             │
+                  ├───────────────────────────────┼───────────────────────────────┤
+                  │ HTML / CSS     ●●●●●          │ Ruby          ●●●○○           │
+                  │ JavaScript     ●●●●○          │ NodeJS        ●●●○○           │
+                  │ React          ●●●○○          │ Java          ●●○○○           │
+                  │ TypeScript     ●●●○○          │ Python        ●●○○○           │
+                  └───────────────────────────────┴───────────────────────────────┘
+
+                  ┌───────────────────────────────┬───────────────────────────────┐
+                  │             BDD               │            OTHERS             │
+                  ├───────────────────────────────┼───────────────────────────────┤
+                  │ SQL ●●●○○                     │ Webflow       ●●●●○           │
+                  │                               │ Wordpress     ●●●○○           │
+                  │                               │ Docker        ●○○○○           │
+                  │                               │ Jenkins       ●○○○○           │
+                  └───────────────────────────────┴───────────────────────────────┘
+                  `}
+                  </pre>
+                </div>
+              )}
+
+              {commandOutput === "projects" && (
+                <div className="terminal-output">
+                  <p>🚀 Portfolio website</p>
+                  <p>📦 Task Manager App</p>
+                  <p>🛰️ API REST Node.js</p>
+                </div>
+              )}
+
+              {commandOutput === "unknown" && (
+                <div className="terminal-output error">
+                  <p>❌ Command not found. Try "SKILLS" or "PROJECTS".</p>
+                </div>
+              )}
+            </>
+          )}
         </div>
       )}
 
