@@ -8,6 +8,7 @@ const Terminal = ({ active, content, onClose }) => {
   const [userInput, setUserInput] = useState("");
   const [commandOutput, setCommandOutput] = useState(null);
   const [showBeginator, setShowBeginator] = useState(false);
+  const [input, setInput] = useState("");
   const terminalRef = useRef(null);
 
   // 🔹 Ferme le terminal si on clique à l'extérieur
@@ -20,6 +21,14 @@ const Terminal = ({ active, content, onClose }) => {
     document.addEventListener("click", handleClickOutside);
     return () => document.removeEventListener("click", handleClickOutside);
   }, [onClose]);
+
+  useEffect(() => {
+  if (active) {
+    // reset complet à chaque ouverture du terminal
+    setInput("");
+    setCommandOutput(null);
+  }
+}, [active]);
 
   // 🔹 Gère l’animation "skills"
   useEffect(() => {
@@ -106,35 +115,106 @@ const Terminal = ({ active, content, onClose }) => {
               {/* 🔹 Résultat de la commande */}
               {commandOutput === "skills" && (
                 <div className="terminal-output">
-                  <pre className="terminal-table">
+                  <pre className="terminal-table fade-in desktop-table">
                   {`
-                  ┌───────────────────────────────┬───────────────────────────────┐
-                  │           FRONTEND            │           BACKEND             │
-                  ├───────────────────────────────┼───────────────────────────────┤
-                  │ HTML / CSS     ●●●●●          │ Ruby          ●●●○○           │
-                  │ JavaScript     ●●●●○          │ NodeJS        ●●●○○           │
-                  │ React          ●●●○○          │ Java          ●●○○○           │
-                  │ TypeScript     ●●●○○          │ Python        ●●○○○           │
-                  └───────────────────────────────┴───────────────────────────────┘
+    ┌───────────────────────────────┬───────────────────────────────┐
+    │           FRONTEND            │           BACKEND             │
+    ├───────────────────────────────┼───────────────────────────────┤
+    │ HTML / CSS     ●●●●●          │ Ruby          ●●●○○           │
+    │ JavaScript     ●●●●○          │ NodeJS        ●●●○○           │
+    │ React          ●●●○○          │ Java          ●●○○○           │
+    │ TypeScript     ●●●○○          │ Python        ●●○○○           │
+    └───────────────────────────────┴───────────────────────────────┘
 
-                  ┌───────────────────────────────┬───────────────────────────────┐
-                  │             BDD               │            OTHERS             │
-                  ├───────────────────────────────┼───────────────────────────────┤
-                  │ SQL ●●●○○                     │ Webflow       ●●●●○           │
-                  │                               │ Wordpress     ●●●○○           │
-                  │                               │ Docker        ●○○○○           │
-                  │                               │ Jenkins       ●○○○○           │
-                  └───────────────────────────────┴───────────────────────────────┘
+    ┌───────────────────────────────┬───────────────────────────────┐
+    │             BDD               │            OTHERS             │
+    ├───────────────────────────────┼───────────────────────────────┤
+    │ SQL ●●●○○                     │ Webflow       ●●●●○           │
+    │                               │ Wordpress     ●●●○○           │
+    │                               │ Docker        ●○○○○           │
+    │                               │ Jenkins       ●○○○○           │
+    └───────────────────────────────┴───────────────────────────────┘
                   `}
+                  </pre>
+                  <pre className="terminal-table fade-in mobile-table">
+                    {`
+    ──────────── FRONTEND ────────────
+
+    HTML / CSS     ●●●●●
+    JavaScript     ●●●●○
+    React          ●●●○○
+    TypeScript     ●●●○○
+
+    ──────────── BACKEND ─────────────
+
+    Ruby           ●●●○○
+    NodeJS         ●●●○○
+    Java           ●●○○○
+    Python         ●●○○○
+
+    ──────────── BDD ────────────────
+
+    SQL            ●●●○○
+
+    ──────────── OTHERS ─────────────
+
+    Webflow        ●●●●○
+    Wordpress      ●●●○○
+    Docker         ●○○○○
+    Jenkins        ●○○○○
+                    `}
                   </pre>
                 </div>
               )}
 
               {commandOutput === "projects" && (
-                <div className="terminal-output">
-                  <p>🚀 Portfolio website</p>
-                  <p>📦 Task Manager App</p>
-                  <p>🛰️ API REST Node.js</p>
+                <div className="terminal-output projects-section">
+                  <div className="project">
+                    {/* DIV 1 – Titre */}
+                    <div className="project-title">
+                      <h3>Jobboard - [K]Reer</h3>
+                      <p>2025</p>
+                    </div>
+
+                    {/* DIV 2 – Image */}
+                    <div className="project-card">
+                      <img src="/images/jobboard-portfolio.png" alt="Portfolio preview" />
+                    </div>
+
+                    {/* DIV 3 – Description */}
+                    <div className="project-description">
+                      <p>
+                        My personal portfolio built with <strong>React</strong>, featuring
+                        an interactive terminal and smooth transitions.
+                      </p>
+                      <p className="techs">
+                        <span>React</span> • <span>CSS</span> • <span>Vite</span>
+                      </p>
+                    </div>
+                  </div>
+                  <div className="project">
+                    {/* DIV 1 – Titre */}
+                    <div className="project-title">
+                      <h3>Etiopath Website</h3>
+                      <p>2024</p>
+                    </div>
+
+                    {/* DIV 2 – Image */}
+                    <div className="project-card">
+                      <img src="/images/etiopath-project-portfolio.png" alt="Portfolio preview" />
+                    </div>
+
+                    {/* DIV 3 – Description */}
+                    <div className="project-description">
+                      <p>
+                        My personal portfolio built with <strong>React</strong>, featuring
+                        an interactive terminal and smooth transitions.
+                      </p>
+                      <p className="techs">
+                        <span>React</span> • <span>CSS</span> • <span>Vite</span>
+                      </p>
+                    </div>
+                  </div>
                 </div>
               )}
 
