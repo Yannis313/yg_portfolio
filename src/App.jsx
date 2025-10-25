@@ -3,19 +3,26 @@ import NavbarDesktop from "./components/NavbarDesktop.jsx";
 import NavbarMobile from "./components/NavbarMobile.jsx";
 import Terminal from "./components/Terminal.jsx";
 import HeroTitleDiv from './components/HeroTitleDiv.jsx';
+import Education from './components/Education.jsx';
 
 function App() {
   const [terminalContent, setTerminalContent] = useState(null);
   const [terminalActive, setTerminalActive] = useState(false);
   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 890);
+  const [activeSection, setActiveSection] = useState("home");
 
   const handleTerminal = (type) => {
-    if (type === "skills") {
-      setTerminalContent("skills");
-    } else if (type === "projects") {
-      setTerminalContent("projects");
-    }
-    setTerminalActive(true);
+    if (type === "skills" || type === "projects") {
+      setTerminalContent(type);
+      setTerminalActive(true);
+      setActiveSection("home");
+    } else if (type === "education") {
+      setTerminalActive(false);
+      setActiveSection("education");
+    } else if (type === "home") {
+      setTerminalActive(false);
+      setActiveSection("home");
+    } 
   };
 
   const closeTerminal = () => setTerminalActive(false);
@@ -36,12 +43,18 @@ function App() {
             ) : (
             <NavbarMobile onSelect={handleTerminal} />
           )}
-          <HeroTitleDiv />
-          <Terminal
-            active={terminalActive}
-            content={terminalContent}
-            onClose={closeTerminal}
-          />
+          {activeSection === "home" && (
+            <>
+              <HeroTitleDiv />
+              <Terminal
+                active={terminalActive}
+                content={terminalContent}
+                onClose={closeTerminal}
+              />
+            </>
+          )}
+
+          {activeSection === "education" && <Education />}
       </div>
     </>
   );

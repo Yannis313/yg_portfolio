@@ -10,14 +10,14 @@ export default function NavbarDesktop({ onSelect }) {
       </div>
 
       <div className="liens-navbar-desktop">
-        <a href="#" onClick={(e) => { e.preventDefault(); onSelect?.(null); }}>home</a>
-        <a href="#" onClick={(e) => { e.preventDefault(); onSelect?.(null); }}>education</a>
+        <a href="#" onClick={(e) => { e.preventDefault(); onSelect?.("home"); }}>home</a>
+        <a href="#" onClick={(e) => { e.preventDefault(); onSelect?.("education"); }}>education</a>
 
         {/* on utilise notre Dropdown React */}
         <Dropdown onSelect={onSelect} />
 
-        <a href="#" onClick={(e) => { e.preventDefault(); onSelect?.(null); }}>work</a>
-        <a href="#" onClick={(e) => { e.preventDefault(); onSelect?.(null); }}>contact</a>
+        <a href="#" onClick={(e) => { e.preventDefault(); onSelect?.("work"); }}>work</a>
+        <a href="#" onClick={(e) => { e.preventDefault(); onSelect?.("contact"); }}>contact</a>
       </div>
     </nav>
   );
