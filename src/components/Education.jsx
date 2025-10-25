@@ -4,19 +4,29 @@ import "../styles/Education.css";
 export default function Education() {
   const educationData = [
     {
-      year: "2025 - 2026",
-      title: "Pré-Master — Nom de l’école",
-      description: "Programme préparatoire en design et développement web.",
+      year: "2025 - 2028",
+      title: "Pre-MsC & MsC Architecte Systèmes d'Information",
+      description: "Epitech",
     },
     {
-      year: "2022 - 2025",
-      title: "Licence Informatique — Université …",
-      description: "Spécialisation front-end, UX/UI, projets web.",
+      year: "2024",
+      title: "Bootcamp Développement Web",
+      description: "Le Wagon",
     },
     {
-      year: "2020 - 2022",
-      title: "BTS SIO — Option SLAM",
-      description: "Dév web, algo, conception logicielle.",
+      year: "2017 - 2020",
+      title: "Master II — Marketing Digital",
+      description: "Toulouse School of Management (IAE)",
+    },
+    {
+      year: "2016 - 2017",
+      title: "Licence — International Business & Trade",
+      description: "Ming Chuan University (Taïwan)",
+    },
+    {
+      year: "2014 - 2016",
+      title: "DUT— Techniques de Commercialisation",
+      description: "Université Paul Sabatier Toulouse III",
     },
   ];
 
