@@ -5,7 +5,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url("/images/paper_texture.png") center/cover no-repeat;
+  /* background: url("/images/paper_texture.png") center/cover no-repeat; */
   color: rgba(255, 255, 255, 0.9);
   font-family: 'Cascadia', monospace;
   font-size: 2rem;
