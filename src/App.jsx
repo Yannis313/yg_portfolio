@@ -6,6 +6,7 @@ import About from "./components/About.jsx";
 import Terminal from "./components/Terminal.jsx";
 import Education from './components/Education.jsx';
 import Work from "./components/Work.jsx";
+import Contact from "./components/Contact.jsx";
 
 function App() {
   const [terminalContent, setTerminalContent] = useState(null);
@@ -27,6 +28,9 @@ function App() {
     } else if (type === "about") {
       setTerminalActive(false);
       setActiveSection("about");
+    } else if (type === "contact"){
+      setTerminalActive(false);
+      setActiveSection("contact");
     } else if (type === "home") {
       setTerminalActive(false);
       setActiveSection("home");
@@ -65,6 +69,7 @@ function App() {
           {activeSection === "education" && <Education />}
           {activeSection === "work" && <Work />}
           {activeSection === "about" && <About />}
+          {activeSection === "contact" && <Contact />}
       </div>
     </>
   );

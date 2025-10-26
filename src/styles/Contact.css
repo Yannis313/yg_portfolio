@@ -1,0 +1,109 @@
+.contact-section {
+  width: 100%;
+  min-height: calc(100vh - 10rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("/images/paper_texture.png") center/cover no-repeat;
+  font-family: 'Cascadia', monospace;
+  color: #fff;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  width: min(1100px, 90vw);
+}
+
+.contact-mail {
+    margin-left: 1rem;
+    margin-top: 3rem;
+}
+
+.contact-phone {
+    margin-left: 1rem;
+    margin-top: 5rem;
+}
+
+.contact-mail a {
+    text-decoration: none;
+    color: #DBDBDC;
+}
+
+.contact-phone a {
+    text-decoration: none;
+    color: #DBDBDC;
+}
+
+.contact-proposition {
+    margin-left: 1rem;
+    margin-top: 10rem;
+    font-size: 0.85rem !important;
+    font-family: 'ArtegraLight';
+    word-break: break-word;
+    width: 95%;
+}
+
+/* === CARDS === */
+.card-glass {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(0, 255, 157, 0.2);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 0 20px rgba(0, 255, 157, 0.1);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-glass:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 30px rgba(0, 255, 157, 0.3);
+}
+
+/* === FORM === */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form input,
+.contact-form textarea {
+  margin-bottom: 1rem;
+  padding: 0.8rem 1rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(0, 255, 157, 0.25);
+  border-radius: 0.5rem;
+  color: #fff;
+  font-size: 1rem;
+  outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #00ff9d;
+  box-shadow: 0 0 10px rgba(0, 255, 157, 0.3);
+}
+
+.btn-send {
+  background: #00ff9d;
+  color: rgb(30, 82, 37);
+  font-weight: 700;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-send:hover {
+  background: #00ffaa;
+  box-shadow: 0 0 15px rgba(0, 255, 157, 0.6);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 900px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+}
