@@ -142,6 +142,7 @@
 
 .terminal-output.error {
   color: #ff4d4d;
+  margin-left: 0.4rem;
 }
 
 .terminal-table {

@@ -220,7 +220,7 @@ const Terminal = ({ active, content, onClose }) => {
 
               {commandOutput === "unknown" && (
                 <div className="terminal-output error">
-                  <p>❌ Command not found. Try "SKILLS" or "PROJECTS".</p>
+                  <p> command not found. try "SKILLS" or "PROJECTS".</p>
                 </div>
               )}
             </>
