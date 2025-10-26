@@ -42,7 +42,7 @@ export default function Education() {
 
   return (
     <div className="education-overlay">
-      {/* Ligne en tirets qui se trace */}
+
         <svg
             className="timeline-svg"
             xmlns="http://www.w3.org/2000/svg"

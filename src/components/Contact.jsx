@@ -10,10 +10,10 @@ export default function Contact() {
 
     emailjs
       .sendForm(
-        "service_67ykysg",   // ton service ID (depuis EmailJS)
-        "template_g147vbm",  // ton template ID
+        "service_67ykysg",   
+        "template_g147vbm",  
         form.current,
-        "GzwbVjc7_iKliCHqc"  // ta clé publique (API key)
+        "GzwbVjc7_iKliCHqc"  
       )
       .then(
         () => alert("✅ Message envoyé avec succès !"),
@@ -24,7 +24,7 @@ export default function Contact() {
   return (
     <section className="contact-section">
       <div className="contact-container">
-        {/* === PARTIE GAUCHE === */}
+
         <div className="contact-info card-glass">
           <h2>Let's talk !</h2>
           <p className="contact-mail">
@@ -36,7 +36,6 @@ export default function Contact() {
           </p>
         </div>
 
-        {/* === FORMULAIRE === */}
         <form ref={form} onSubmit={sendEmail} className="contact-form card-glass">
           <h2>Envoyez-moi un message</h2>
 

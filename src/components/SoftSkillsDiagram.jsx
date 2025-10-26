@@ -18,7 +18,7 @@ export default function SoftSkillsChart() {
     datasets: [
       {
         label: "Soft Skills",
-        data: [9, 8, 8, 7, 9], // valeurs sur 10
+        data: [9, 8, 8, 7, 9], 
         backgroundColor: "rgba(0, 255, 157, 0.2)",
         borderColor: "#00ff9d",
         borderWidth: 2,

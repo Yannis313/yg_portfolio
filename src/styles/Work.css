@@ -1,8 +1,7 @@
-/* === SECTION PRINCIPALE === */
 .work-section *, 
 .work-section *::before, 
 .work-section *::after {
-  position: static !important; /* ✅ empêche tout héritage de position absolue */
+  position: static !important; 
   box-sizing: border-box;
 }
 
@@ -17,11 +16,10 @@
   font-family: 'Cascadia', monospace;
   overflow: hidden;
   padding: 0;
-  font-size: 1rem; /* ✅ base propre */
+  font-size: 1rem; 
   line-height: 1.4;
 }
 
-/* === FLECHES === */
 .arrow {
   position: absolute;
   top: 50%;
@@ -47,10 +45,7 @@
 .arrow.left {
     padding-right: 2rem;
 }
-/* .arrow.left { left: 2rem; }
-.arrow.right { right: 2rem; } */
 
-/* === CONTENU === */
 .work-content {
   display: grid;
   grid-template-columns: 22rem auto 22rem;
@@ -70,7 +65,6 @@
   overflow: hidden;
 }
 
-/* === COLONNES === */
 .work-left,
 .work-right {
   display: flex;
@@ -90,7 +84,6 @@
   text-align: right;
 }
 
-/* === IMAGE === */
 .work-image {
   display: flex;
   align-items: center;
@@ -117,7 +110,6 @@
   box-shadow: 0 0 2.4rem rgba(0, 255, 157, 0.4);
 }
 
-/* === TITRES ET TEXTES === */
 .work-left h2 {
   font-size: clamp(1rem, 3vw, 2.2rem);
   margin-bottom: 0.6rem;
@@ -167,18 +159,16 @@
   margin-left: 10rem;
 }
 
-/* === RESPONSIVE === */
-/* === RESPONSIVE MOBILE === */
 @media (max-width: 960px) {
   .work-content {
-    display: flex;                /* ✅ passe en flex */
-    flex-direction: column;        /* ✅ empile tous les éléments */
-    align-items: center;           /* ✅ centre horizontalement */
-    justify-content: center;       /* ✅ centre verticalement si besoin */
-    text-align: center;            /* ✅ centre le texte */
-    gap: 2rem;                     /* ✅ espace harmonieux entre les blocs */
-    height: auto;                  /* ✅ la hauteur s’adapte au contenu */
-    padding: 2rem 1.5rem;          /* ✅ un peu de respiration */
+    display: flex;               
+    flex-direction: column;        
+    align-items: center;          
+    justify-content: center;     
+    text-align: center;            
+    gap: 2rem;                    
+    height: auto;                  
+    padding: 2rem 1.5rem;          
   }
 
   .work-left,
@@ -200,11 +190,6 @@
     width: 12rem;
     height: 12rem;
   }
-
-  /* .work-right h3,
-  .work-year {
-    margin: 0.5rem 0;            
-  } */
 
   .work-right h3 {
     align-self: center;
@@ -215,19 +200,16 @@
   }
 }
 
-
-
-
 @media (max-width: 380px) {
     .work-content {
-    display: flex;                 /* ✅ passe en flex */
-    flex-direction: column;        /* ✅ empile tous les éléments */
-    align-items: center;           /* ✅ centre horizontalement */
-    justify-content: center;       /* ✅ centre verticalement si besoin */
-    text-align: center;            /* ✅ centre le texte */
-    gap: 2rem;                     /* ✅ espace harmonieux entre les blocs */
-    height: auto;                  /* ✅ la hauteur s’adapte au contenu */
-    padding: 2rem 1.5rem;          /* ✅ un peu de respiration */
+    display: flex;                 
+    flex-direction: column;       
+    align-items: center;           
+    justify-content: center;       
+    text-align: center;            
+    gap: 2rem;                   
+    height: auto;                  
+    padding: 2rem 1.5rem;         
   }
 
   .work-left,
@@ -249,11 +231,6 @@
     width: 12rem;
     height: 12rem;
   }
-
-  /* .work-right h3,
-  .work-year {
-    margin: 0.5rem 0;            
-  } */
 
   .work-right h3 {
     margin-left: 6rem;

@@ -12,14 +12,12 @@ export default function About() {
     <section className="about-section">
       <div className="about-grid">
 
-        {/* PHOTO + IDENTITÉ */}
         <div className="about-photo card-glass">
           <img src={photoid} alt="portrait" />
           <h2>Yannis Gaspard</h2>
           <p>Etudiant Pré-MsC Architecte Systèmes d'Information</p>
         </div>
 
-        {/* DESCRIPTION */}
         <div className="about-description card-glass">
           <h3>À propos de moi</h3>
           <p>
@@ -33,13 +31,11 @@ export default function About() {
           </p>
         </div>
 
-        {/* SOFT SKILLS */}
         <div className="about-softskills card-glass">
           <h3>Soft Skills</h3>
           <SoftSkillsDiagram />
         </div>
 
-        {/* HOBBIES */}
         <div className="about-hobbies card-glass">
           <h3>Loisirs & Passions</h3>
           <div className="hobbies-grid">
@@ -51,14 +47,13 @@ export default function About() {
           </div>
         </div>
 
-        {/* LIENS */}
         <div className="about-links card-glass">
           <h3>Réseaux & Contact</h3>
             <div className="social-links">
-                <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/Yannis313" target="_blank" rel="noopener noreferrer">
                 <img src={github_logo} alt="GitHub" className="social-icon" />
                 </a>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/in/yannis-gaspard-38035b100/" target="_blank" rel="noopener noreferrer">
                 <img src={linkedin_logo} alt="LinkedIn" className="social-icon" />
                 </a>
                 <a href="mailto:yann@example.com">

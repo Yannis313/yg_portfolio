@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/App.css"; // si tu mets tout ton CSS dans style.css
+import "../styles/App.css"; 
 
 const HeroTitleDiv = () => {
   return (

@@ -15,14 +15,18 @@ const Terminal = ({ active, content, onClose }) => {
 
   // 🔹 Ferme le terminal si on clique à l'extérieur
   useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (terminalRef.current && !terminalRef.current.contains(e.target)) {
-        onClose();
-      }
-    };
-    document.addEventListener("click", handleClickOutside);
-    return () => document.removeEventListener("click", handleClickOutside);
-  }, [onClose]);
+  const handleClickOutside = (e) => {
+    const isOutsideTerminal =
+      terminalRef.current && !terminalRef.current.contains(e.target);
+    const isNavbarClick = e.target.closest(".navbar-desktop, .navbar-mobile");
+
+    if (isOutsideTerminal && !isNavbarClick) {
+      onClose();
+    }
+  };
+  document.addEventListener("click", handleClickOutside);
+  return () => document.removeEventListener("click", handleClickOutside);
+}, [onClose]);
 
   useEffect(() => {
   if (active) {
@@ -186,11 +190,11 @@ const Terminal = ({ active, content, onClose }) => {
                     {/* DIV 3 – Description */}
                     <div className="project-description">
                       <p>
-                        My personal portfolio built with <strong>React</strong>, featuring
-                        an interactive terminal and smooth transitions.
+                        A jobboard built with <strong>React and NodeJS</strong>, featuring
+                        interactive job applications.
                       </p>
                       <p className="techs">
-                        <span>React</span> • <span>CSS</span> • <span>Vite</span>
+                        <span>React</span> • <span>NodeJS</span> • <span>Vite</span>
                       </p>
                     </div>
                   </div>
@@ -209,11 +213,10 @@ const Terminal = ({ active, content, onClose }) => {
                     {/* DIV 3 – Description */}
                     <div className="project-description">
                       <p>
-                        My personal portfolio built with <strong>React</strong>, featuring
-                        an interactive terminal and smooth transitions.
+                        A website I did for an Etiopath Therapist. Built with <strong>Webflow</strong>.
                       </p>
                       <p className="techs">
-                        <span>React</span> • <span>CSS</span> • <span>Vite</span>
+                        <span>HTML</span> • <span>CSS</span> • <span>Webflow</span>
                       </p>
                     </div>
                   </div>

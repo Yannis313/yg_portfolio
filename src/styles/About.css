@@ -5,7 +5,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background: url("/images/paper_texture.png") center/cover no-repeat; */
   color: rgba(255, 255, 255, 0.9);
   font-family: 'Cascadia', monospace;
   font-size: 2rem;
@@ -26,7 +25,6 @@
     font-size: 0.8rem !important;
 }
 
-/* === GRID LAYOUT === */
 .about-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -38,7 +36,6 @@
   height: 90%;
 }
 
-/* === CARDS : DESIGN PRO === */
 .card-glass {
   position: relative;
   background: linear-gradient(145deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.25));
@@ -78,7 +75,6 @@
   font-weight: 700;
   color: #00ff9d;
   margin-bottom: 1rem;
-  /* letter-spacing: 0.5px; */
 }
 
 .card-glass p {
@@ -92,7 +88,6 @@
   font-weight: 600;
 }
 
-/* === PHOTO === */
 .about-photo {
   grid-area: photo;
   text-align: center;
@@ -111,7 +106,6 @@
   box-shadow: 0 0 12px rgba(0, 255, 157, 0.4);
 }
 
-/* === AUTRES BLOCS === */
 .about-description { grid-area: description; }
 .about-softskills { grid-area: softskills; }
 .about-hobbies { grid-area: hobbies; }
@@ -178,7 +172,6 @@ canvas {
   filter: drop-shadow(0 0 6px rgba(0, 255, 157, 0.2));
 }
 
-/* === RESPONSIVE === */
 @media (max-width: 960px) {
   .about-grid {
     grid-template-columns: 1fr;

@@ -15,11 +15,23 @@ function App() {
   const [activeSection, setActiveSection] = useState("home");
 
   const handleTerminal = (type) => {
-    if (type === "skills" || type === "projects") {
-      setTerminalContent(type);
-      setTerminalActive(true);
+     if (type === "skills") {
+
+    if (activeSection !== "home") {
       setActiveSection("home");
-    } else if (type === "education") {
+      setTimeout(() => {
+        setTerminalContent("skills");
+        setTerminalActive(true);
+      }, 0);
+    } else {
+      setTerminalContent("skills");
+      setTerminalActive(true);
+    }
+    return;
+  }
+
+  setTerminalActive(false);
+     if (type === "education") {
       setTerminalActive(false);
       setActiveSection("education");
     } else if (type === "work") {
@@ -44,8 +56,6 @@ function App() {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
-  console.log("TerminalActive:", terminalActive, "Content:", terminalContent);
 
   return (
     <>

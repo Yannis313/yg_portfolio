@@ -50,13 +50,13 @@ export default function Work() {
 
   return (
     <section className="work-section">
-      {/* Flèche gauche */}
+
       <div className="arrow left" onClick={prevWork}>
         &#10094;
       </div>
 
       <div className="work-content">
-        {/* Texte gauche */}
+
         <div className="work-left">
           <h2>Work Experiences</h2>
           <p>
@@ -64,12 +64,10 @@ export default function Work() {
           </p>
         </div>
 
-        {/* Image centrale */}
         <div className="work-image">
           <img src={work.image} alt={work.company} />
         </div>
 
-        {/* Détails droite */}
         <div className="work-right">
           <h3>{work.company}</h3>
           <p className="work-year">{work.year}</p>
@@ -77,7 +75,6 @@ export default function Work() {
         </div>
       </div>
 
-      {/* Flèche droite */}
       <div className="arrow right" onClick={nextWork}>
         &#10095;
       </div>
