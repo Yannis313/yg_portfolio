@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import NavbarDesktop from "./components/NavbarDesktop.jsx";
 import NavbarMobile from "./components/NavbarMobile.jsx";
 import HeroTitleDiv from './components/HeroTitleDiv.jsx';
+import About from "./components/About.jsx";
 import Terminal from "./components/Terminal.jsx";
 import Education from './components/Education.jsx';
 import Work from "./components/Work.jsx";
