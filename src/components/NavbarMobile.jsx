@@ -41,7 +41,7 @@ export default function NavbarMobile({ onSelect }) {
       {/* Menu mobile */}
       {open && (
         <div className="liens-navbar-mobile active">
-          <a href="#" onClick={(e) => { e.preventDefault(); handleClick(null); }}>home</a>
+          <a href="#" onClick={(e) => { e.preventDefault(); handleClick("home"); }}>home</a>
           <a href="#" onClick={(e) => { e.preventDefault(); handleClick("education"); }}>education</a>
 
           {/* Dropdown skills */}
@@ -61,8 +61,8 @@ export default function NavbarMobile({ onSelect }) {
             )}
           </div>
 
-          <a href="#" onClick={(e) => { e.preventDefault(); handleClick(null); }}>work</a>
-          <a href="#" onClick={(e) => { e.preventDefault(); handleClick(null); }}>contact</a>
+          <a href="#" onClick={(e) => { e.preventDefault(); handleClick("work"); }}>work</a>
+          <a href="#" onClick={(e) => { e.preventDefault(); handleClick("contact"); }}>contact</a>
         </div>
       )}
     </nav>

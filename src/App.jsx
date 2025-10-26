@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
 import NavbarDesktop from "./components/NavbarDesktop.jsx";
 import NavbarMobile from "./components/NavbarMobile.jsx";
-import Terminal from "./components/Terminal.jsx";
 import HeroTitleDiv from './components/HeroTitleDiv.jsx';
+import Terminal from "./components/Terminal.jsx";
 import Education from './components/Education.jsx';
+import Work from "./components/Work.jsx";
 
 function App() {
   const [terminalContent, setTerminalContent] = useState(null);
@@ -19,6 +20,9 @@ function App() {
     } else if (type === "education") {
       setTerminalActive(false);
       setActiveSection("education");
+    } else if (type === "work") {
+      setTerminalActive(false);
+      setActiveSection("work");
     } else if (type === "home") {
       setTerminalActive(false);
       setActiveSection("home");
@@ -55,6 +59,7 @@ function App() {
           )}
 
           {activeSection === "education" && <Education />}
+          {activeSection === "work" && <Work />}
       </div>
     </>
   );
