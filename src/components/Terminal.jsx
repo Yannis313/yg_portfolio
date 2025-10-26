@@ -1,5 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import "../styles/Terminal.css";
+import etiopath_project_portfolio from "../assets/images/etiopath_project_portfolio.png";
+import jobboard_portfolio from "../assets/images/jobboard_portfolio.png";
 
 const Terminal = ({ active, content, onClose }) => {
   const [showInitializer, setShowInitializer] = useState(false);
@@ -178,7 +180,7 @@ const Terminal = ({ active, content, onClose }) => {
 
                     {/* DIV 2 – Image */}
                     <div className="project-card">
-                      <img src="/images/jobboard-portfolio.png" alt="Portfolio preview" />
+                      <img src={jobboard_portfolio} alt="Portfolio preview" />
                     </div>
 
                     {/* DIV 3 – Description */}
@@ -201,7 +203,7 @@ const Terminal = ({ active, content, onClose }) => {
 
                     {/* DIV 2 – Image */}
                     <div className="project-card">
-                      <img src="/images/etiopath-project-portfolio.png" alt="Portfolio preview" />
+                      <img src={etiopath_project_portfolio} alt="Portfolio preview" />
                     </div>
 
                     {/* DIV 3 – Description */}

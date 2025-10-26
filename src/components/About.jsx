@@ -1,6 +1,11 @@
 import React from "react";
 import "../styles/About.css";
 import SoftSkillsDiagram from "./SoftSkillsDiagram";
+import photoid from "../assets/images/photoid.jpg";
+import github_logo from "../assets/images/github_logo.png";
+import linkedin_logo from "../assets/images/linkedin_logo.png";
+import email_icon from "../assets/images/email_icon.png";
+import cv_icon from "../assets/images/cv_icon.png";
 
 export default function About() {
   return (
@@ -9,7 +14,7 @@ export default function About() {
 
         {/* PHOTO + IDENTITÉ */}
         <div className="about-photo card-glass">
-          <img src="/images/photoid.jpg" alt="portrait" />
+          <img src={photoid} alt="portrait" />
           <h2>Yannis Gaspard</h2>
           <p>Etudiant Pré-MsC Architecte Systèmes d'Information</p>
         </div>
@@ -51,16 +56,16 @@ export default function About() {
           <h3>Réseaux & Contact</h3>
             <div className="social-links">
                 <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-                <img src="/images/github_logo.png" alt="GitHub" className="social-icon" />
+                <img src={github_logo} alt="GitHub" className="social-icon" />
                 </a>
                 <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-                <img src="/images/linkedin_logo.png" alt="LinkedIn" className="social-icon" />
+                <img src={linkedin_logo} alt="LinkedIn" className="social-icon" />
                 </a>
                 <a href="mailto:yann@example.com">
-                <img src="/images/email_icon.png" alt="E-mail" className="social-icon" />
+                <img src={email_icon} alt="E-mail" className="social-icon" />
                 </a>
-                <a href="/files/CV_YANNIS_GASPARD.pdf" download>
-                <img src="/images/cv_icon.png" alt="Télécharger le CV" className="social-icon" />
+                <a href="/yg_portfolio/files/CV_YANNIS_GASPARD.pdf" download="CV_YANNIS_GASPARD.pdf">
+                <img src={cv_icon} alt="Télécharger le CV" className="social-icon" />
                 </a>
             </div>
         </div>

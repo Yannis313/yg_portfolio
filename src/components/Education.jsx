@@ -1,5 +1,10 @@
 import React from "react";
 import "../styles/Education.css";
+import epitechlogo from "../assets/images/epitechlogo.png";
+import le_wagon_logo from "../assets/images/le_wagon_logo.png";
+import tsm_logo from "../assets/images/tsm_logo.png";
+import ming_chuan_logo from "../assets/images/ming_chuan_logo.png";
+import ups_logo from "../assets/images/ups_logo.png";
 
 export default function Education() {
   const educationData = [
@@ -7,31 +12,31 @@ export default function Education() {
       year: "2025 - 2028",
       title: "Pre-MsC & MsC Architecte Systèmes d'Information",
       description: "Epitech",
-      img: "/images/epitechlogo.png",
+      img: epitechlogo,
     },
     {
       year: "2024",
       title: "Bootcamp Développement Web",
       description: "Le Wagon",
-      img: "/images/le_wagon_logo.png",
+      img: le_wagon_logo,
     },
     {
       year: "2017 - 2020",
       title: "Master II — Marketing Digital",
       description: "Toulouse School of Management (IAE)",
-      img: "/images/tsm_logo.png",
+      img: tsm_logo,
     },
     {
       year: "2016 - 2017",
       title: "Licence — International Business & Trade",
       description: "Ming Chuan University (Taïwan)",
-      img: "/images/ming_chuan_logo.png",
+      img: ming_chuan_logo,
     },
     {
       year: "2014 - 2016",
       title: "DUT— Techniques de Commercialisation",
       description: "Université Paul Sabatier Toulouse III",
-      img: "/images/ups_logo.png",
+      img: ups_logo,
     },
   ];
 

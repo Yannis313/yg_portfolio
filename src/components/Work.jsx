@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import "../styles/Work.css";
+import silae_logo from "../assets/images/silae_logo.png";
+import bleexo_logo from "../assets/images/bleexo_logo.png";
+import vyfe_logo from "../assets/images/vyfe_logo.png";
+import vinylit_logo from "../assets/images/vinylit_logo.png";
 
 export default function Work() {
   const works = [
@@ -9,7 +13,7 @@ export default function Work() {
       year: "2022 - 2023",
       description:
         "Management Team SDR Inbound. Gestion stratégie lead generation. Construction d'une stratégie social selling.",
-      image: "/images/silae_logo.png",
+      image: silae_logo,
     },
     {
       title: "Sales Development Representative",
@@ -17,7 +21,7 @@ export default function Work() {
       year: "2021 - 2022",
       description:
         "Prospection outbound & inbound (call, mailing, social selling). Implémentation d'outils sales automation.",
-      image: "/images/bleexo_logo.png",
+      image: bleexo_logo,
     },
     {
       title: "Business Developper & Digital Marketing Project Manager",
@@ -25,7 +29,7 @@ export default function Work() {
       year: "2019 - 2020",
       description:
         "Lead generation & qualification. Création architecture SEO et refonte site web (Wordpress). Mailings aquisition & fidélisation.",
-      image: "/images/vyfe_logo.png",
+      image: vyfe_logo,
     },
     {
       title: "Communication & E-business Assistant",
@@ -33,7 +37,7 @@ export default function Work() {
       year: "2016",
       description:
         "Community Management & Gestion catalogue (Magento)",
-      image: "/images/vinylit_logo.png",
+      image: vinylit_logo,
     },
   ];
 

@@ -1,12 +1,13 @@
 import React from "react";
 import "../styles/Navbars.css";
 import Dropdown from "./Dropdown.jsx";
+import portfoliologo from "../assets/images/portfoliologo.png";
 
 export default function NavbarDesktop({ onSelect }) {
   return (
     <nav className="navbar-desktop">
       <div className="logo-desktop">
-        <img src="/images/portfolio-logo.png" className="logo-desktop" alt="logo portfolio yg" />
+        <img src={portfoliologo} className="logo-desktop" alt="logo portfolio yg" />
       </div>
 
       <div className="liens-navbar-desktop">
