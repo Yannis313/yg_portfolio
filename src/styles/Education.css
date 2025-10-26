@@ -1,3 +1,4 @@
+/* === SECTION PRINCIPALE === */
 .education-overlay {
   position: absolute;
   top: 10rem;
@@ -11,7 +12,7 @@
   overflow: visible;
 }
 
-/* === Ligne verticale === */
+/* === LIGNE CENTRALE === */
 .timeline-svg {
   position: absolute;
   top: 0;
@@ -25,7 +26,7 @@
 
 .timeline-line {
   stroke: #00ff9d;
-  stroke-width: 5.5;
+  stroke-width: 0.35rem;
   stroke-dasharray: 4 4;
   stroke-dashoffset: 300;
   animation: drawLine 2s ease-out forwards;
@@ -38,46 +39,69 @@
   }
 }
 
-/* === Liste du contenu === */
+/* === LISTE DES FORMATIONS === */
 .education-list {
   position: relative;
-  width: 65%;
+  width: 70%;
   margin: 0 auto;
   z-index: 2;
   padding-top: 1rem;
+
+  /* Grille à 2 colonnes */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 4rem;
+  row-gap: 3rem;
 }
 
-/* === Chaque formation === */
+/* === CHAQUE FORMATION === */
 .education-item {
   position: relative;
-  width: 50%;
-  margin-top: 2rem 0;
+  width: 100%;
+  margin: 0;
   opacity: 0;
-  transform: translateY(16px);
-  animation: fadeInUp 0.7s ease forwards;
 }
 
-/* À gauche */
+/* Formation à gauche (colonne 1) */
 .education-item:nth-child(odd) {
-  left: 0;
+  grid-column: 1;
+  justify-self: end; /* colle la carte vers la timeline */
   text-align: right;
-  margin-left: -2rem;
+  animation: fadeInLeft 0.9s ease forwards;
 }
 
-/* À droite */
+/* Formation à droite (colonne 2) */
 .education-item:nth-child(even) {
-  left: 50%;
+  grid-column: 2;
+  justify-self: start; /* colle la carte vers la timeline */
   text-align: left;
-  margin-left: 2rem;
+  margin-top: 4rem;
+  animation: fadeInRight 0.9s ease forwards;
 }
 
-@keyframes fadeInUp {
-  to {
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-2rem) translateY(1rem);
+  }
+  100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0) translateY(0);
   }
 }
 
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(2rem) translateY(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+  }
+}
+
+/* === TEXTE ET STYLE DES BLOCS === */
 .edu-year {
   font-weight: bold;
   color: #00ff9d;
@@ -89,26 +113,43 @@
   border-radius: 0.8rem;
   padding: 1rem 1.2rem;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  display: inline-block;
+  display: block;
   text-align: left;
-  width: 80%;
+  width: clamp(17.5rem, 90%, 32.5rem); /* largeur fluide et bornée */
+  height: 4rem;
 }
 
 .edu-content h3 {
   margin: 0 0 0.4rem 0;
+  font-size: 1rem;
+  line-height: 1.4;
 }
 
 .edu-content p {
   margin: 0;
   color: #ddd;
   font-size: 0.95rem;
+  line-height: 1.4;
+  margin-left: 1.2rem;
 }
 
-/* === Mobile responsive === */
+.edu-logo {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  opacity: 0.7;
+  margin-left: 28rem;
+  margin-top: 0.8rem;
+}
+
+/* === RESPONSIVE MOBILE === */
 @media (max-width: 660px) {
+  .education-list {
+    grid-template-columns: 1fr;
+  }
+
   .education-item {
-    width: 100%;
-    left: 0 !important;
+    justify-self: center;
     text-align: left !important;
   }
 

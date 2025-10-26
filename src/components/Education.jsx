@@ -7,26 +7,31 @@ export default function Education() {
       year: "2025 - 2028",
       title: "Pre-MsC & MsC Architecte Systèmes d'Information",
       description: "Epitech",
+      img: "/images/epitechlogo.png",
     },
     {
       year: "2024",
       title: "Bootcamp Développement Web",
       description: "Le Wagon",
+      img: "/images/le_wagon_logo.png",
     },
     {
       year: "2017 - 2020",
       title: "Master II — Marketing Digital",
       description: "Toulouse School of Management (IAE)",
+      img: "/images/tsm_logo.png",
     },
     {
       year: "2016 - 2017",
       title: "Licence — International Business & Trade",
       description: "Ming Chuan University (Taïwan)",
+      img: "/images/ming_chuan_logo.png",
     },
     {
       year: "2014 - 2016",
       title: "DUT— Techniques de Commercialisation",
       description: "Université Paul Sabatier Toulouse III",
+      img: "/images/ups_logo.png",
     },
   ];
 
@@ -59,6 +64,7 @@ export default function Education() {
             <div className="edu-content">
               <h3>{edu.title}</h3>
               <p>{edu.description}</p>
+              <img src={edu.img} className="edu-logo" alt="logo portfolio yg" />
             </div>
           </div>
         ))}
