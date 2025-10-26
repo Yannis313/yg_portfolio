@@ -43,6 +43,7 @@ export default function NavbarMobile({ onSelect }) {
         <div className="liens-navbar-mobile active">
           <a href="#" onClick={(e) => { e.preventDefault(); handleClick("home"); }}>home</a>
           <a href="#" onClick={(e) => { e.preventDefault(); handleClick("education"); }}>education</a>
+          <a href="#" onClick={(e) => { e.preventDefault(); handleClick("about"); }}>about</a>
 
           {/* Dropdown skills */}
           <div className="dropdown-mobile">

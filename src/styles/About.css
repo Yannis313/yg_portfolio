@@ -1,0 +1,210 @@
+/* === SECTION PRINCIPALE === */
+.about-section {
+  width: 100%;
+  min-height: calc(100vh - 8rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("/images/paper_texture.png") center/cover no-repeat;
+  color: rgba(255, 255, 255, 0.9);
+  font-family: 'Cascadia', monospace;
+  font-size: 2rem;
+}
+
+.about-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.about-section h3 {
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.about-photo p {
+    font-family: 'ArtegraLight';
+    font-size: 0.8rem !important;
+}
+
+/* === GRID LAYOUT === */
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    "photo description description"
+    "softskills hobbies links";
+  gap: 1.7rem;
+  width: min(1200px, 90vw);
+  height: 90%;
+}
+
+/* === CARDS : DESIGN PRO === */
+.card-glass {
+  position: relative;
+  background: linear-gradient(145deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.25));
+  border: 1px solid rgba(0, 255, 157, 0.15);
+  border-radius: 1rem;
+  padding: 1.5rem 2rem;
+  color: #eaeaea;
+  backdrop-filter: blur(12px);
+  box-shadow:
+    0 0 25px rgba(0, 255, 157, 0.08),
+    inset 0 0 25px rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
+.card-glass:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 0 35px rgba(0, 255, 157, 0.25),
+    inset 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.card-glass::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 15% 10%, rgba(255, 255, 255, 0.08), transparent 70%);
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.card-glass h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #00ff9d;
+  margin-bottom: 1rem;
+  /* letter-spacing: 0.5px; */
+}
+
+.card-glass p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(230, 230, 230, 0.9);
+}
+
+.card-glass span {
+  color: #00ff9d;
+  font-weight: 600;
+}
+
+/* === PHOTO === */
+.about-photo {
+  grid-area: photo;
+  text-align: center;
+}
+
+.about-photo h2 {
+  margin-top: 0.6rem;
+}
+
+.about-photo img {
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #00ff9d;
+  box-shadow: 0 0 12px rgba(0, 255, 157, 0.4);
+}
+
+/* === AUTRES BLOCS === */
+.about-description { grid-area: description; }
+.about-softskills { grid-area: softskills; }
+.about-hobbies { grid-area: hobbies; }
+.about-links { grid-area: links; }
+
+.about-description p {
+  color: rgba(220, 220, 220, 0.85);
+  line-height: 1.6;
+  text-align: left;
+  font-size: 0.80rem;
+  width: 80%;
+  padding-right: 5rem;
+  font-family: 'ArtegraLight';
+}
+
+.hobbies-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.hobbies-grid span {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 0.6rem;
+  padding: 0.4rem 0.8rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+.social-icon {
+    height: 5rem;
+    width: 5rem;
+    filter: drop-shadow(0 0 6px rgba(0, 255, 157, 0.6));
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 12px rgba(0, 255, 157, 0.9));
+}
+
+.about-softskills h3 {
+    margin-bottom: 0 !important;
+}
+
+.softskills-chart-container {
+    width: 19rem;
+    height: 19rem;
+    margin-left: 1rem;
+
+}
+
+canvas {
+  filter: drop-shadow(0 0 6px rgba(0, 255, 157, 0.2));
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 960px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "photo"
+      "description"
+      "softskills"
+      "hobbies"
+      "links";
+  }
+
+  .card-glass {
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .about-description p {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hobbies-grid {
+    justify-content: center;
+  }
+
+  .social-links {
+    align-items: center;
+  }
+}

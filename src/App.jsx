@@ -24,6 +24,9 @@ function App() {
     } else if (type === "work") {
       setTerminalActive(false);
       setActiveSection("work");
+    } else if (type === "about") {
+      setTerminalActive(false);
+      setActiveSection("about");
     } else if (type === "home") {
       setTerminalActive(false);
       setActiveSection("home");
@@ -61,6 +64,7 @@ function App() {
 
           {activeSection === "education" && <Education />}
           {activeSection === "work" && <Work />}
+          {activeSection === "about" && <About />}
       </div>
     </>
   );

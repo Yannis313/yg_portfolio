@@ -11,6 +11,7 @@ export default function NavbarDesktop({ onSelect }) {
 
       <div className="liens-navbar-desktop">
         <a href="#" onClick={(e) => { e.preventDefault(); onSelect?.("home"); }}>home</a>
+        <a href="#" onClick={(e) => { e.preventDefault(); onSelect?.("about"); }}>about</a>
         <a href="#" onClick={(e) => { e.preventDefault(); onSelect?.("education"); }}>education</a>
 
         {/* on utilise notre Dropdown React */}
