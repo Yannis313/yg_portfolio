@@ -51,7 +51,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 4rem;
-  row-gap: 3rem;
+  row-gap: 2rem;
 }
 
 /* === CHAQUE FORMATION === */
@@ -75,7 +75,7 @@
   grid-column: 2;
   justify-self: start; /* colle la carte vers la timeline */
   text-align: left;
-  margin-top: 4rem;
+  margin-top: 3rem;
   animation: fadeInRight 0.9s ease forwards;
 }
 
@@ -109,38 +109,76 @@
 }
 
 .edu-content {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 0.8rem;
-  padding: 1rem 1.2rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 1rem;
+  border: 0.1rem solid rgba(0, 255, 157, 0.4);
+  box-shadow: 0 0 1rem rgba(0, 255, 157, 0.25);
+  padding: 1rem 1rem 0rem 1rem;
+  width: clamp(17.5rem, 90%, 32.5rem);
   display: block;
   text-align: left;
-  width: clamp(17.5rem, 90%, 32.5rem); /* largeur fluide et bornée */
-  height: 4rem;
+  transition: all 0.3s ease;
+  overflow: hidden;
 }
 
+/* Glow animé au survol */
+.edu-content::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(120deg, rgba(0, 255, 157, 0.2), rgba(0, 255, 157, 0));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+.edu-content:hover::before {
+  opacity: 1;
+}
+
+.edu-content:hover {
+  box-shadow: 0 0 1.5rem rgba(0, 255, 157, 0.5);
+  transform: translateY(-0.3rem);
+}
+
+/* Texte au-dessus du glow */
+.edu-content h3,
+.edu-content p {
+  position: relative;
+  z-index: 1;
+}
+
+/* Titres et paragraphes */
 .edu-content h3 {
   margin: 0 0 0.4rem 0;
   font-size: 1rem;
   line-height: 1.4;
+  color: #fff;
+  text-shadow: 0 0 6px rgba(0, 255, 157, 0.4);
 }
 
 .edu-content p {
   margin: 0;
-  color: #ddd;
+  color: #b5ffd7;
   font-size: 0.95rem;
   line-height: 1.4;
-  margin-left: 1.2rem;
+  opacity: 0.85;
 }
+
 
 .edu-logo {
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
-  opacity: 0.7;
-  margin-left: 28rem;
-  margin-top: 0.8rem;
+  opacity: 0.8;
+  filter: drop-shadow(0 0 6px rgba(0, 255, 157, 0.5));
+  margin-left: 27.5rem;
+  margin-bottom: 0.5rem;
+  /* margin-top: 0.8rem; */
 }
+
 
 /* === RESPONSIVE MOBILE === */
 @media (max-width: 660px) {
