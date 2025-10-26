@@ -218,7 +218,7 @@
 
 
 
-@media (max-width: 430px) {
+@media (max-width: 380px) {
     .work-content {
     display: flex;                 /* ✅ passe en flex */
     flex-direction: column;        /* ✅ empile tous les éléments */
