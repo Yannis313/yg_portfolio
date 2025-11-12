@@ -103,3 +103,9 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 768px) {
+  .contact-section {
+    margin-top: 5rem;
+  }
+}

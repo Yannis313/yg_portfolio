@@ -7,7 +7,8 @@
   align-items: center;
   color: rgba(255, 255, 255, 0.9);
   font-family: 'Cascadia', monospace;
-  font-size: 2rem;
+  padding: 2rem 1rem; /* ← AJOUTÉ */
+  box-sizing: border-box; /* ← AJOUTÉ */
 }
 
 .about-section h2 {
@@ -32,8 +33,9 @@
     "photo description description"
     "softskills hobbies links";
   gap: 1.7rem;
-  width: min(1200px, 90vw);
-  height: 90%;
+  width: min(1200px, 95vw); /* ← MODIFIÉ */
+  height: auto; /* ← MODIFIÉ */
+  box-sizing: border-box; /* ← AJOUTÉ */
 }
 
 .card-glass {
@@ -49,6 +51,7 @@
     inset 0 0 25px rgba(255, 255, 255, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 .card-glass:hover {
@@ -112,13 +115,19 @@
 .about-links { grid-area: links; }
 
 .about-description p {
-  color: rgba(220, 220, 220, 0.85);
+  color: rgba(255, 255, 255, 0.90);
   line-height: 1.6;
-  text-align: left;
-  font-size: 0.80rem;
-  width: 80%;
-  padding-right: 5rem;
+  text-align: justify; /* ← Justifié pour un rendu propre */
+  font-size: clamp(0.75rem, 1.5vw, 0.8rem);
+  width: 100%; /* ← Prend toute la largeur disponible */
+  max-width: 100%; /* ← Pas de limite */
+  padding-left: 1rem;
+  padding-right: 1rem;
   font-family: 'ArtegraLight';
+  word-wrap: break-word;
+  text-wrap: wrap;
+  overflow-wrap: break-word;
+  box-sizing: border-box;
 }
 
 .hobbies-grid {
@@ -162,9 +171,11 @@
 }
 
 .softskills-chart-container {
-    width: 19rem;
-    height: 19rem;
-    margin-left: 1rem;
+    width: 100%; /* ← MODIFIÉ */
+    max-width: 19rem; /* ← AJOUTÉ */
+    height: auto; /* ← MODIFIÉ */
+    aspect-ratio: 1; /* ← AJOUTÉ */
+    margin: 0 auto; 
 
 }
 
@@ -181,16 +192,25 @@ canvas {
       "softskills"
       "hobbies"
       "links";
+    gap: 1.5rem;
+    width: 95vw;
   }
 
   .card-glass {
     text-align: center;
-    padding: 1.5rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .about-description {
+    min-height: auto; /* ← Permet l'extension */
+    height: auto; /* ← S'adapte au contenu */
   }
 
   .about-description p {
     width: 100%;
     text-align: center;
+    padding: 0 1rem; /* ← Espaces latéraux sur mobile */
+    margin: 0;
   }
 
   .hobbies-grid {
@@ -199,5 +219,39 @@ canvas {
 
   .social-links {
     align-items: center;
+    gap: 2rem;
+  }
+  
+  .social-icon {
+    height: 4rem;
+    width: 4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section {
+    padding: 1rem 0.5rem;
+    margin-top: 4rem;
+  }
+  
+  .about-grid {
+    gap: 1rem;
+  }
+  
+  .card-glass {
+    padding: 1rem 0.8rem;
+  }
+
+  .about-description {
+    height: 95vw;
+  }
+  
+  .about-description p {
+    font-size: 0.8rem;
+  }
+  
+  .social-icon {
+    height: 3.5rem;
+    width: 3.5rem;
   }
 }

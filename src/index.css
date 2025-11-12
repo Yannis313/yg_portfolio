@@ -1,4 +1,4 @@
-body {
+/* body {
   display: flex;
   flex-direction: column;
   background-image: url("/images/crumpled_paper_background.jpg");
@@ -17,4 +17,21 @@ html {
   width: 100%;
   height: 100%;
   font-size: 16px;
+} */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-image: url('/images/crumpled_paper_background.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
 }

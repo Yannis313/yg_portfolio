@@ -179,7 +179,7 @@
 .projects-section {
   display: flex;
   flex-direction: column;
-  align-items: center;;
+  align-items: center;
   gap: 2rem;
   color: white;
   font-family: 'Cascadia', monospace;
@@ -189,6 +189,8 @@
   overflow-x: hidden;
   flex: 1;
   min-height: 0;
+  width: 100%; /* ← AJOUTÉ */
+  box-sizing: border-box; /* ← AJOUTÉ */
   scrollbar-width: thin;
   scroll-behavior: smooth;
 }
@@ -225,8 +227,10 @@
 .project {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  width: 85%;
+  gap: 1rem; /* ← RÉDUIT */
+  width: 90%; /* ← MODIFIÉ */
+  max-width: 100%; /* ← AJOUTÉ */
+  box-sizing: border-box; /* ← AJOUTÉ */
 }
 
 .project-title {
@@ -252,36 +256,50 @@
 
 .project-card {
   background: linear-gradient(90deg, rgba(37,37,37,0.8) 10%, rgba(0,255,144,0.6) 100%);
-  border-radius: 1.5rem;
+  border-radius: 1rem;
   overflow: hidden;
-  margin-top: 1rem;
-  padding: 1.5rem;
+  margin-top: 0.5rem;
+  padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .project-card img {
   width: 100%;
-  height: 100%;
+  height: auto;
+  max-height: 300px;
   border-radius: 1rem;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .project-description {
-  margin-top: 1rem;
+  margin-top: -1rem;
   background-color: #0c0c0c;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 1.5rem;
-  padding: 2.5rem;
+  border-radius: 1rem;
+  padding: 1.5rem;
   color: #e8e8e8;
   line-height: 1.5;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.project-description p {
+  font-size: clamp(0.75rem, 2vw, 1rem);
+  margin-bottom: 0.5rem;
+  text-wrap: wrap;
 }
 
 .project-description .techs {
-  margin-top: 1rem;
-  font-size: 0.9rem;
+  padding-top: 0.5rem; /* ← AUGMENTÉ pour plus d'espace */
+  font-size: clamp(0.7rem, 1.8vw, 0.9rem);
   color: #9affc9;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
 .project-description .techs span {
@@ -326,6 +344,31 @@
   }
 }
 
+@media (max-width: 480px) {
+  .terminal-skills-project-container {
+    left: 5%;
+    width: 90%;
+    top: 15%;
+    height: 75%;
+  }
+  
+  .project {
+    width: 95%;
+  }
+  
+  .project-card {
+    padding: 0.8rem;
+  }
+  
+  .project-card img {
+    max-height: 200px;
+  }
+  
+  .project-description {
+    padding: 1rem;
+  }
+}
+
 @media (max-height: 700px) {
   .terminal-skills-project-container {
     height: 70%;
@@ -346,16 +389,18 @@
   }
 }
 
-@media (min-width: 660px) {
+/* === DESKTOP GRID AVEC CHEVAUCHEMENT === */
+@media (min-width: 768px) {
   .project {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* ← Force l'égalité */
     grid-template-areas:
       "title title"
       "card description";
     align-items: stretch;
-    gap: 0;
-    position: relative;
+    column-gap: 0; /* ← Pas d'espace entre colonnes */
+    row-gap: 1rem;
+    width: 85%;
   }
 
   .project-title {
@@ -364,14 +409,18 @@
 
   .project-card {
     grid-area: card;
-    margin-right: -0.5rem;
+    width: calc(100% + 2rem); /* ← Déborde à droite de 2rem */
+    margin-right: -2rem; /* ← Compense le débordement */
     z-index: 2;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    position: relative;
   }
 
   .project-description {
     grid-area: description;
-    margin-left: -0.5rem;
+    width: calc(100% + 2rem); /* ← Déborde à gauche de 2rem */
+    padding-left: 3rem; /* ← Garde le texte lisible */
     z-index: 1;
+    position: relative;
   }
 }
